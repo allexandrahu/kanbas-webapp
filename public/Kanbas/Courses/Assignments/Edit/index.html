@@ -1,0 +1,79 @@
+<html>
+<style>
+    textarea {
+        resize: both;
+        width: fit-content;
+        height: fit-content;
+    }
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <select name="Edit">
+        <option value="EDIT">Edit</option>
+        <option value="SPEED">Speed Grader</option>
+        <option value="DUPLICATE">Duplicate</option>
+        <option value="DELETE">Delete</option>
+        <option value="MOVE">Move To...</option>
+        <option value="SEND">Send To...</option>
+        <option value="COPY">Copy To...</option>
+        <option value="SHARE">Share to Commons</option>
+    </select>
+    <hr>
+    <h2>Assignment Name</h2>
+    <input type="type" value="A1 - ENV + HTML" />
+    <br>
+    <br>
+    <textarea>This is the assignment description.</textarea>
+    <br>
+    <p>Points
+        <br><input type="type" value="100" />
+    </p>
+
+    <p>Assignment Group
+        <br><select name="ASSIGMENTS">
+            <option value="ASSIGN">ASSIGMENTS</option>
+        </select>
+    </p>
+
+    <p>Display Grade as
+        <br><select name="PERCENT">
+            <option value="PERCENT">Percentage</option>
+        </select>
+    </p>
+
+    <p>Online Entry Options <br>
+        <input type="checkbox" /> Text Entry <br>
+        <input type="checkbox" /> Website URL <br>
+        <input type="checkbox" /> Media Recordings <br>
+        <input type="checkbox" /> Student Annotation <br>
+        <input type="checkbox" /> File Uploads <br>
+    </p>
+
+    <p>Assign <br>
+        Assign to
+        <br><input type="type" value="Everyone" />
+    </p>
+
+    Due <br>
+    <input value="2021-01-01" type="date" /> <br><br>
+
+    Available from <br>
+    <input value="2021-01-01" type="date" /> <br><br>
+
+    Until <br>
+    <input value="2021-01-01" type="date" /> <br><br>
+
+    <a href="/Kanbas/Courses/Assignments/index.html">
+        <button>Cancel</button>
+    </a>
+    <a href="/Kanbas/Courses/Assignments/index.html">
+        <button>Save</button>
+    </a>
+
+
+</body>
+
+</html>
