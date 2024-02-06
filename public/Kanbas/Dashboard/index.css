@@ -1,0 +1,30 @@
+.course-card {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-top {
+    max-height: 150px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: navy;
+    font-weight: bold;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-body {
+    flex-grow: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
