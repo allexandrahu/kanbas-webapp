@@ -9,17 +9,14 @@ import Courses from "./Courses";
 function Kanbas() {
    return (
      <div className="d-flex">
-      <KanbasNavigation />
-       <div>
-         <h1>Kanbas Navigation</h1>
-       </div>
-       <div style={{ flexGrow: 1 }}>
-       <Routes>
-          <Route path="/" element={<Navigate to="Dashboard" />} />
-          <Route path="Account" element={<h1>Account</h1>} />
-          <Route path="Dashboard" element={<Dashboard />} />
-          <Route path="Courses/:courseId/*" element={<Courses />} />
-        </Routes>
+       <KanbasNavigation />
+       <div className="main-content"> {/* Apply the .main-content class here */}
+         <Routes>
+           <Route path="/" element={<Navigate to="Dashboard" />} />
+           <Route path="Account" element={<h1>Account</h1>} />
+           <Route path="Dashboard" element={<Dashboard />} />
+           <Route path="Courses/:courseId/*" element={<Courses />} />
+         </Routes>
        </div>
      </div>
  );}

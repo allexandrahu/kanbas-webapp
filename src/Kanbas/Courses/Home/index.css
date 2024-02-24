@@ -1,0 +1,386 @@
+.wd-navigation {
+    background-color: white;
+    list-style: none;
+    padding: 0px;
+    width: 125px;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+.wd-navigation li {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.wd-navigation li.wd-active {
+    border-left: 2px solid black;
+}
+
+.wd-navigation li.wd-active a {
+    color: black;
+}
+
+.wd-navigation a {
+    color: #B32727;
+    text-decoration: none;
+}
+
+.home-container {
+    display: flex;
+  }
+  
+  .column {
+    flex: 1;
+    padding: 30px;
+  }
+  
+  .home-container {
+    display: flex;
+  }
+  
+  .column {
+    padding: 10px;
+  }
+  
+  .column:first-child {
+    flex: 2;
+  }
+  
+  .column:last-child {
+    flex: 1; /* This makes the second column twice as wide as the first */
+  }
+  
+  .wd-modules,
+.wd-modules * {
+    border-radius: 0%;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wd-modules {
+    margin: 5px;
+}
+
+
+.wd-modules>li {
+    background-color: lightgray;
+    border: 1px solid gray !important;
+    border-left: none !important;
+}
+
+.wd-modules>li>div {
+    padding: 6px;
+    border-left: 1px solid gray !important;
+}
+
+.wd-modules>li>ul>li {
+    padding: 5px;
+    border-top: 1px solid gray !important;
+    border-left: 2px solid green;
+}
+
+.wd-modules>li {
+    margin-bottom: 20px;
+}
+
+.wd-kanbas-navigation,
+.wd-navigation {
+    flex: 1;
+}
+
+.wd-kanbas-navigation {
+    flex: 2;
+}
+
+.wd-navigation {
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+
+    #navbarToggleNav .btn,
+    #navbarToggleNav a {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 0;
+    }
+
+    #navbarToggleNav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        overflow-y: auto;
+        background-color: #ffffff;
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    #navbarToggleExternalContent .btn,
+    #navbarToggleExternalContent a {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 0;
+    }
+
+    #navbarToggleExternalContent {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        overflow-y: auto;
+        background-color: #000;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a,
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a i {
+        color: white;
+        font-size: 18px;
+    }
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a {
+        font-size: 18px;
+    }
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a i {
+        font-size: 16px;
+    }
+
+    #navbarToggleExternalContent {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding-top: 20px;
+    }
+}
+
+
+
+
+@media (max-width: 767px) {
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a i {
+        margin-top: 50px;
+        font-size: 30px;
+        padding-bottom: 5px;
+        color: red;
+    }
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a {
+        text-decoration: none;
+    }
+}
+
+.red-text {
+    color: red;
+}
+/* Adjusted button styles */
+.course-status button {
+    background-color: #2f7c31;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 2px; /* Adjusted margin */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.course-status button.gray-button {
+    background-color: #959ba0; /* Bootstrap's gray */
+}
+
+/* Adjusted hover effect */
+.course-status button:hover {
+    opacity: 0.8;
+}
+
+/* Icon styling */
+.course-status button i {
+    margin-right: 8px;
+}
+
+.wd-modules,
+.wd-modules * {
+    border-radius: 0%;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wd-modules {
+    margin: 5px;
+}
+
+
+.wd-modules>li {
+    background-color: lightgray;
+    border: 1px solid gray !important;
+    border-left: none !important;
+}
+
+.wd-modules>li>div {
+    padding: 6px;
+    border-left: 1px solid gray !important;
+}
+
+.wd-modules>li>ul>li {
+    padding: 5px;
+    border-top: 1px solid gray !important;
+    border-left: 2px solid green;
+}
+
+.wd-modules>li {
+    margin-bottom: 20px;
+}
+
+.wd-kanbas-navigation,
+.wd-navigation {
+    flex: 1;
+}
+
+.wd-kanbas-navigation {
+    flex: 2;
+}
+
+.wd-navigation {
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+
+    #navbarToggleNav .btn,
+    #navbarToggleNav a {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 0;
+    }
+
+    #navbarToggleNav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        overflow-y: auto;
+        background-color: #ffffff;
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    #navbarToggleExternalContent .btn,
+    #navbarToggleExternalContent a {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 0;
+    }
+
+    #navbarToggleExternalContent {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        overflow-y: auto;
+        background-color: #000;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a,
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a i {
+        color: white;
+        font-size: 18px;
+    }
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a {
+        font-size: 18px;
+    }
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a i {
+        font-size: 16px;
+    }
+
+    #navbarToggleExternalContent {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding-top: 20px;
+    }
+}
+
+
+
+
+@media (max-width: 767px) {
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a i {
+        margin-top: 50px;
+        font-size: 30px;
+        padding-bottom: 5px;
+        color: red;
+    }
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a {
+        text-decoration: none;
+    }
+}
+
+.red-text {
+    color: red;
+}
+/* Adjusted button styles */
+.course-status button {
+    background-color: #2f7c31;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 2px; /* Adjusted margin */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.course-status button.gray-button {
+    background-color: #959ba0; /* Bootstrap's gray */
+}
+
+/* Adjusted hover effect */
+.course-status button:hover {
+    opacity: 0.8;
+}
+
+/* Icon styling */
+.course-status button i {
+    margin-right: 8px;
+}

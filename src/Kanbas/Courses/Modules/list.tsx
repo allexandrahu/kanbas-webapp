@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../Navigation/index.css";
+import "./index.css";
 import { modules } from "../../Database";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle } from "react-icons/fa";
 import { useParams } from "react-router";
@@ -9,12 +9,27 @@ function ModuleList() {
   const [selectedModule, setSelectedModule] = useState(modulesList[0]);
   return (
     <>
-      {/* <!-- Add buttons here --> */}
+      <div>
+        <button type="button">Collapse All</button>
+        <button type="button">View Progress</button>
+        <button type="button">
+          <i className="fa-regular fa-square-check"></i> Publish All
+          <i className="fa-solid fa-angle-down"></i>
+        </button>
+        <button
+          type="button"
+          style={{ backgroundColor: "red", borderColor: "red", color: "white" }}
+        >
+          + Module
+        </button>
+      </div>
       <ul className="list-group wd-modules">
         {modulesList.map((module, index) => (
-          <li key={index}
+          <li
+            key={index}
             className="list-group-item"
-            onClick={() => setSelectedModule(module)}>
+            onClick={() => setSelectedModule(module)}
+          >
             <div>
               <FaEllipsisV className="me-2" />
               {module.name}

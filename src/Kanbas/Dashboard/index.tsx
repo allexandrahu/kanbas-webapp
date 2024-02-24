@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { courses } from "../Database";
-import "./index.css";
 
 function Dashboard() {
   return (

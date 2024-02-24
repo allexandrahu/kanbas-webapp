@@ -1,6 +1,6 @@
 import { FaCheckCircle, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
-import { assignments } from "../Database";
+import { assignments } from "../../Database";
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
 function Assignments() {
@@ -9,6 +9,14 @@ function Assignments() {
     (assignment: { course: string | undefined; }) => assignment.course === courseId);
   return (
     <>
+    <div>
+      <input type="text" placeholder="Search for Assignments" />
+      <button type="button">Group</button>
+      <button type="button">Assignment</button>
+      <select name="Edit Assignment Dates">
+        <option value="EDIT">Edit Assignment Dates</option>
+      </select>
+    </div>
       <ul className="list-group wd-modules">
         <li className="list-group-item">
           <div>
