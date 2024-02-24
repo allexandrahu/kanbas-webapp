@@ -1,0 +1,16 @@
+.breadcrumb-text {
+    color: red;
+    font-size: smaller;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between; /* This will put them on opposite ends; adjust as needed */
+    align-items: center;
+    padding: 10px;
+  }
