@@ -1,4 +1,4 @@
-function ForLoops() {
+function FindFunction() {
     let numberArray1 = [1, 2, 3, 4, 5];
     let stringArray1 = ['string1', 'string2', 'string3'];
     
@@ -13,5 +13,5 @@ function ForLoops() {
       </>
     );
   }
-  export default ForLoops;
+  export default FindFunction;
   

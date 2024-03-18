@@ -1,0 +1,220 @@
+.wd-modules,
+.wd-modules * {
+    border-radius: 0%;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wd-modules {
+    margin: 5px;
+}
+
+
+.wd-modules>li {
+    background-color: lightgray;
+    border: 1px solid gray !important;
+    border-left: none !important;
+}
+
+.wd-modules>li>div {
+    padding: 6px;
+    border-left: 1px solid gray !important;
+}
+
+.wd-modules>li>ul>li {
+    padding: 5px;
+    border-top: 1px solid gray !important;
+    border-left: 2px solid green;
+}
+
+.wd-modules>li {
+    margin-bottom: 20px;
+}
+
+.wd-kanbas-navigation,
+.wd-navigation {
+    flex: 1;
+}
+
+.wd-kanbas-navigation {
+    flex: 2;
+}
+
+.wd-navigation {
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+
+    #navbarToggleNav .btn,
+    #navbarToggleNav a {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 0;
+    }
+
+    #navbarToggleNav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        overflow-y: auto;
+        background-color: #ffffff;
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    #navbarToggleExternalContent .btn,
+    #navbarToggleExternalContent a {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 0;
+    }
+
+    #navbarToggleExternalContent {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        overflow-y: auto;
+        background-color: #000;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a,
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a i {
+        color: white;
+        font-size: 18px;
+    }
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a {
+        font-size: 18px;
+    }
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a i {
+        font-size: 16px;
+    }
+
+    #navbarToggleExternalContent {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding-top: 20px;
+    }
+}
+
+
+
+
+@media (max-width: 767px) {
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a i {
+        margin-top: 50px;
+        font-size: 30px;
+        padding-bottom: 5px;
+        color: red;
+    }
+
+    #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a {
+        text-decoration: none;
+    }
+}
+
+.red-text {
+    color: red;
+}
+/* Adjusted button styles */
+.course-status button {
+    background-color: #2f7c31;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 2px; /* Adjusted margin */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.course-status button.gray-button {
+    background-color: #959ba0; /* Bootstrap's gray */
+}
+
+/* Adjusted hover effect */
+.course-status button:hover {
+    opacity: 0.8;
+}
+
+/* Icon styling */
+.course-status button i {
+    margin-right: 8px;
+}
+
+/* Styles for the input field */
+input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px #ddd;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  /* On input focus, change the border color */
+  input[type="text"]:focus {
+    border-color: #66afe9;
+  }
+  
+  /* Base styles for buttons */
+  button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c; /* Bootstrap 'success' green */
+    color: white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #449d44; /* A darker green */
+  }
+  
+  /* Styles for the select dropdown */
+  select {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  /* On select focus, change the border color */
+  select:focus {
+    border-color: #66afe9;
+  }
+  
