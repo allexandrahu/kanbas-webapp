@@ -1,8 +1,7 @@
 import ModuleList from '../Modules/list';
 import './index.css'; 
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBan, faCircleCheck, faFileImport, faFileExport, faCompass, faChartSimple, faBullhorn, faBell, faCircleExclamation, faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
+import { faBan, faCircleCheck, faFileImport, faFileExport, faCompass, faChartSimple, faBullhorn } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarPlus as faCalendarPlusRegular, faBell as faBellRegular } from '@fortawesome/free-regular-svg-icons';
 
 function Home() {

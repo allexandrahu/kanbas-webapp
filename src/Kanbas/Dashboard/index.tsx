@@ -1,6 +1,4 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { courses as dbCourses } from "../Database";
 import './index.css'; 
 
 function Dashboard({
