@@ -22,33 +22,43 @@ function ModuleList() {
           type="text"
           placeholder="New Module"
           value={module.name}
-          onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))
-        }/>
+          onChange={(e) =>
+            dispatch(setModule({ ...module, name: e.target.value }))
+          }
+        />
         <button
           onClick={() => dispatch(addModule({ ...module, course: courseId }))}
           className="edit"
         >
           Add
         </button>
-        <button className="update" onClick={() => dispatch(updateModule(module))}>
+        <button
+          className="update"
+          onClick={() => dispatch(updateModule(module))}
+        >
           Update
         </button>
       </div>
       <textarea
         placeholder="New Description"
         value={module.description}
-        onChange={(e) => dispatch(setModule({ ...module, description: e.target.value }))
-      }/>
+        onChange={(e) =>
+          dispatch(setModule({ ...module, description: e.target.value }))
+        }
+      />
       <ul className="list-group wd-module">
         {moduleList.map((module, index) => (
           <li key={module._id} className="list-group-item">
             <button
               className="edit"
-              onClick={() => dispatch(setModule(module))}>
+              onClick={() => dispatch(setModule(module))}
+            >
               Edit
             </button>
             <button
-              className="delete-button" onClick={() => dispatch(deleteModule(module._id))}>
+              className="delete-button"
+              onClick={() => dispatch(deleteModule(module._id))}
+            >
               Delete
             </button>
             <div className="module-item">
