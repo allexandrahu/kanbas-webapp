@@ -1,0 +1,35 @@
+.buttongreen {
+    background-color: #2f7c31;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 3px; /* Adjusted margin */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.buttongray {
+    background-color: #9e9e9e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 3px; /* Adjusted margin */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.buttonred {
+    background-color: #dc1d1d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 3px; /* Adjusted margin */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition: all 0.3s;
+}

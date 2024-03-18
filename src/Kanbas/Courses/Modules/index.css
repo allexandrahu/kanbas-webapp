@@ -1,40 +1,53 @@
-.wd-modules,
-.wd-modules * {
+.update {
+    background-color: #0043d5;
+    color: white;            
+    border: none;             
+    padding: 10px 20px;      
+    text-align: center;       
+    text-decoration: none;  
+    display: inline-block;    
+    font-size: 16px;         
+    margin: 4px 2px;         
+    cursor: pointer;         
+    float: right;            
+    border-radius: 4px;      
+    transition: background-color 0.3s;
+}
+
+.update:hover {
+    background-color: #000a90;
+    /* Slightly darker green on hover */
+}
+
+
+.wd-module,
+.wd-module * {
     border-radius: 0%;
     border: none;
     margin: 0px;
     padding: 0px;
 }
 
-.wd-modules {
+.wd-module {
     margin: 5px;
 }
 
 
-.wd-modules>li {
-    background-color: lightgray;
+.wd-module>li {
+    background-color: white;
     border: 1px solid gray !important;
     border-left: none !important;
 }
 
-.wd-modules>li>div {
+.wd-module>li>div {
     padding: 6px;
     border-left: 1px solid gray !important;
 }
 
-.wd-modules>li>ul>li {
+.wd-module>li>ul>li {
     padding: 5px;
     border-top: 1px solid gray !important;
     border-left: 2px solid green;
-}
-
-.wd-modules>li {
-    margin-bottom: 20px;
-}
-
-.wd-kanbas-navigation,
-.wd-navigation {
-    flex: 1;
 }
 
 .wd-kanbas-navigation {
@@ -118,9 +131,6 @@
     }
 }
 
-
-
-
 @media (max-width: 767px) {
     #navbarToggleExternalContent .wd-kanbas-navigation-mobile li a i {
         margin-top: 50px;
@@ -137,21 +147,19 @@
 .red-text {
     color: red;
 }
+
 /* Adjusted button styles */
-.course-status button {
+.button-green button {
     background-color: #2f7c31;
     color: white;
     border: none;
     padding: 5px 10px;
-    margin: 2px; /* Adjusted margin */
+    margin: 3px;
+    /* Adjusted margin */
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     transition: all 0.3s;
-}
-
-.course-status button.gray-button {
-    background-color: #959ba0; /* Bootstrap's gray */
 }
 
 /* Adjusted hover effect */
@@ -163,3 +171,54 @@
 .course-status button i {
     margin-right: 8px;
 }
+
+.module-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.module-description {
+    font-size: 1em;
+}
+
+.delete-button {
+    background-color: #ff0000; 
+    color: white;            
+    border: none;             
+    padding: 10px 20px;      
+    text-align: center;       
+    text-decoration: none;  
+    display: inline-block;    
+    font-size: 16px;         
+    margin: 4px 2px;         
+    cursor: pointer;         
+    float: right;            
+    border-radius: 4px;      
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: #cc0000; 
+  }
+
+  .edit {
+    background-color: #237445; 
+    color: white;            
+    border: none;             
+    padding: 10px 20px;      
+    text-align: center;       
+    text-decoration: none;  
+    display: inline-block;    
+    font-size: 16px;         
+    margin: 4px 2px;         
+    cursor: pointer;         
+    float: right;            
+    border-radius: 4px;      
+    transition: background-color 0.3s;
+  }
+  
+  .edit:hover {
+    background-color: #065c2a; 
+  }
+  
+  
