@@ -3,7 +3,6 @@ import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
 import { useSelector } from "react-redux";
 import { LabState, TodoType } from "../../../store";
-
 function TodoList() {
   const { todos } = useSelector((state: LabState) => state.todosReducer);
   return (
