@@ -1,6 +1,4 @@
-import React, { useState } from "react";
 import "./index.css";
-import { modules as initialModules } from "../../Database";
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { addModule, deleteModule, updateModule, setModule } from "./reducer";
