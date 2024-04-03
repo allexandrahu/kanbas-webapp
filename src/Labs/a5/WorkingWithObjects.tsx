@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles.css";
+
 function WorkingWithObjects() {
+  const API_BASE = process.env.REACT_APP_API_BASE;
   const [assignment, setAssignment] = useState({
     id: 1,
     title: "NodeJS Assignment",
@@ -10,21 +12,22 @@ function WorkingWithObjects() {
     completed: false,
     score: 0,
   });
-  const ASSIGNMENT_URL = "http://localhost:4000/a5/assignment";
+  const ASSIGNMENT_URL = `${API_BASE}/a5/assignment`;
   const [module, setModule] = useState({
     id: 1,
     name: "NodeJS Module",
     description: "Create a NodeJS module with ExpressJS",
     course: "Web Development",
   });
-  const MODULE_URL = "http://localhost:4000/a5/module";
+  const MODULE_URL = `${API_BASE}/a5/module`;
   const fetchAssignment = async () => {
     const response = await axios.get(`${ASSIGNMENT_URL}`);
     setAssignment(response.data);
   };
   const updateTitle = async () => {
-    const response = await axios
-      .get(`${ASSIGNMENT_URL}/title/${assignment.title}`);
+    const response = await axios.get(
+      `${ASSIGNMENT_URL}/title/${assignment.title}`
+    );
     setAssignment(response.data);
   };
   useEffect(() => {
@@ -35,21 +38,25 @@ function WorkingWithObjects() {
     <div>
       <h3>Working With Objects</h3>
       <h3>Modifying Properties</h3>
-      <input onChange={(e) => setAssignment({
-            ...assignment, title: e.target.value })}
-        value={assignment.title} type="text" />
-      <button onClick={updateTitle} >
-        Update Title to: {assignment.title}
-      </button>
-      <button onClick={fetchAssignment} >
-        Fetch Assignment
-      </button> <br/>
+      <input
+        onChange={(e) =>
+          setAssignment({
+            ...assignment,
+            title: e.target.value,
+          })
+        }
+        value={assignment.title}
+        type="text"
+      />
+      <button onClick={updateTitle}>Update Title to: {assignment.title}</button>
+      <button onClick={fetchAssignment}>Fetch Assignment</button> <br />
       <h4>Modifying Properties</h4>
       <a
         className="add-button btn btn-primary"
-        href={`${ASSIGNMENT_URL}/title/${assignment.title}`}>
+        href={`${ASSIGNMENT_URL}/title/${assignment.title}`}
+      >
         Update Title
-      </a> 
+      </a>
       <input
         type="text"
         onChange={(e) =>
@@ -57,7 +64,6 @@ function WorkingWithObjects() {
         }
         value={assignment.title}
       />
-
       <a
         className="add-button btn btn-primary"
         href={`${MODULE_URL}/description/${module.description}`}
@@ -69,7 +75,6 @@ function WorkingWithObjects() {
         onChange={(e) => setModule({ ...module, description: e.target.value })}
         value={module.description}
       />
-
       <a
         className="add-button btn btn-primary"
         href={`${MODULE_URL}/name/${module.name}`}
@@ -81,7 +86,6 @@ function WorkingWithObjects() {
         onChange={(e) => setModule({ ...module, name: e.target.value })}
         value={module.name}
       />
-
       <a
         className="add-button btn btn-primary"
         href={`${ASSIGNMENT_URL}/completed/${assignment.completed}`}
@@ -95,7 +99,6 @@ function WorkingWithObjects() {
         }
         checked={assignment.completed}
       />
-
       <a
         className="add-button btn btn-primary"
         href={`${ASSIGNMENT_URL}/score/${assignment.score}`}
@@ -109,42 +112,41 @@ function WorkingWithObjects() {
         }
         value={assignment.score}
       />
-
       <h4>Retrieving Objects</h4>
       <a
         className="add-button btn btn-primary"
-        href="http://localhost:4000/a5/assignment"
+        href={`${API_BASE}/a5/assignment`}
       >
         Get Assignment
       </a>
       <h4>Retrieving Properties</h4>
       <a
         className="add-button btn btn-primary"
-        href="http://localhost:4000/a5/assignment/title"
+        href={`${API_BASE}/a5/assignment/title`}
       >
         Get Title
       </a>
       <a
         className="add-button btn btn-primary"
-        href="http://localhost:4000/a5/module/description"
+        href={`${API_BASE}/a5/module/description`}
       >
         Get Description
       </a>
       <a
         className="add-button btn btn-primary"
-        href="http://localhost:4000/a5/module/name"
+        href={`${API_BASE}/a5/module/name`}
       >
         Get Name
       </a>
       <a
         className="add-button btn btn-primary"
-        href="http://localhost:4000/a5/todos"
+        href={`${API_BASE}/a5/todos`}
       >
         Get Todos
       </a>
       <a
         className="add-button btn btn-primary"
-        href="http://localhost:4000/a5/todos/:id"
+        href={`${API_BASE}/a5/todos/:id`}
       >
         Get Todo by ID
       </a>

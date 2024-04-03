@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./styles.css";
 function EncodingParametersInURLs() {
   const [a, setA] = useState(34);
   const [b, setB] = useState(23);
+  const [welcome, setWelcome] = useState("");
+  const fetchWelcome = async () => {
+    const response = await axios.get("http://localhost:4000/a5/welcome");
+    setWelcome(response.data);
+  };
+  useEffect(() => {
+    fetchWelcome();
+  }, []);
   const [result, setResult] = useState(0);
   const fetchSum = async (a: number, b: number) => {
     const response = await
@@ -15,14 +22,8 @@ function EncodingParametersInURLs() {
       `http://localhost:4000/a5/subtract/${a}/${b}`);
     setResult(response.data);
   };
-  const [welcome, setWelcome] = useState("");
-  const fetchWelcome = async () => {
-    const response = await axios.get("http://localhost:4000/a5/welcome");
-    setWelcome(response.data);
-  };
-  useEffect(() => {
-    fetchWelcome();
-  }, []);
+
+
   return (
     <div>
       <h3>Encoding Parameters In URLs</h3>
@@ -30,17 +31,57 @@ function EncodingParametersInURLs() {
       <h5>Fetching Welcome</h5>
       <h6>{welcome}</h6>
       <h4>Calculator</h4>
-      <input 
+      <input
         type="number"
         value={a}
         onChange={(e) => setA(parseInt(e.target.value))}
-      /> <br/>
+      />
       <input
         type="number"
-        onChange={(e) => setB(parseInt(e.target.value))}
         value={b}
-      /> <br/>
-            <input value={result} type="number" readOnly />
+        onChange={(e) => setB(parseInt(e.target.value))}
+      />
+      <h3>Path Parameters</h3>
+      <a href={`http://localhost:4000/a5/add/${a}/${b}`}>
+        Add {a} + {b}
+      </a>
+      <a href={`http://localhost:4000/a5/subtract/${a}/${b}`}>
+        Substract {a} - {b}
+      </a>
+      <h3>Query Parameters</h3>
+      <a
+        className="btn btn-primary"
+        href={`http://localhost:4000/a5/calculator?operation=add&a=${a}&b=${b}`}
+      >
+        Add {a} + {b}
+      </a>
+      <a
+        className="btn btn-danger"
+        href={`http://localhost:4000/a5/calculator?operation=subtract&a=${a}&b=${b}`}
+      >
+        Subtract {a} - {b}
+      </a>
+      <h3>Path Parameters Multiply and Divide</h3>
+      <a href={`http://localhost:4000/a5/multiply/${a}/${b}`}>
+        Multiply {a} * {b}
+      </a>
+      <a href={`http://localhost:4000/a5/divide/${a}/${b}`}>
+        Divide {a} / {b}
+      </a>
+      <h3>Query Parameters Multiply and Divide</h3>
+      <a
+        className="btn btn-primary"
+        href={`http://localhost:4000/a5/calculator?operation=multiply&a=${a}&b=${b}`}
+      >
+        Multiply {a} * {b}
+      </a>
+      <a
+        className="btn btn-danger"
+        href={`http://localhost:4000/a5/calculator?operation=divide&a=${a}&b=${b}`}
+      >
+        Divide {a} / {b}
+      </a>
+      <input value={result} type="number" readOnly />
       <h3>Fetch Result</h3>
       <button onClick={() => fetchSum(a, b)} >
         Fetch Sum of {a} + {b}
@@ -48,32 +89,6 @@ function EncodingParametersInURLs() {
       <button onClick={() => fetchSubtraction(a, b)} >
         Fetch Substraction of {a} - {b}
       </button>
-      <h3>Path Parameters</h3>
-      <a
-        className="add-button btn btn-primary"
-        href={`http://localhost:4000/a5/add/${a}/${b}`}
-      >
-        Add {a} + {b}
-      </a>
-      <a
-        className="subtract-button btn btn-danger"
-        href={`http://localhost:4000/a5/subtract/${a}/${b}`}
-      >
-        Subtract {a} - {b}
-      </a>
-      <h3>Query Parameters</h3>
-      <a
-        className="add-button btn btn-primary"
-        href={`http://localhost:4000/a5/calculator?operation=add&a=${a}&b=${b}`}
-      >
-        Add {a} + {b}
-      </a>
-      <a
-        className="subtract-button btn btn-danger"
-        href={`http://localhost:4000/a5/calculator?operation=subtract&a=${a}&b=${b}`}
-      >
-        Subtract {a} - {b}
-      </a>
     </div>
   );
 }
