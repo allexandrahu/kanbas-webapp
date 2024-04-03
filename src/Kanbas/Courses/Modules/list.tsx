@@ -1,73 +1,51 @@
 import "./index.css";
 import { useParams } from "react-router";
-import { useSelector, useDispatch } from "react-redux";
-import { addModule, deleteModule, updateModule, setModule } from "./reducer";
-import { KanbasState } from "../../store";
+import {
+  deleteModule,
+} from "./reducer";
+import * as client from "./client";
+import React, {  } from "react";
+import { modules } from "../../Database";
 
 function ModuleList() {
-  const { courseId } = useParams();
-  const moduleList = useSelector(
-    (state: KanbasState) => state.modulesReducer.modules
-  );
-  const module = useSelector(
-    (state: KanbasState) => state.modulesReducer.module
-  );
-  const dispatch = useDispatch();
+  const handleDeleteModule = (moduleId: string) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+
+  const courseId = useParams(); // Add this line to declare the courseId variable
+  const handleUpdateModule = async () => {
+    const module: { _id: string } = { _id: "module-id" }; // Replace "module-id" with the actual module ID
+    dispatch({ type: "modules/updateModule", payload: module }); // Fix: Use the correct action type for updateModule
+  };
+
+  function handleAddModule(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    throw new Error("Function not implemented.");
+  }
+
+  function dispatch(arg0: { payload: any; type: "modules/deleteModule" | "modules/updateModule"; }) {
+    throw new Error("Function not implemented.");
+  }
+
   return (
-    <>
-      <div className="module-form-container">
-        <input
-          type="text"
-          placeholder="New Module"
-          value={module.name}
-          onChange={(e) =>
-            dispatch(setModule({ ...module, name: e.target.value }))
-          }
-        />
-        <button
-          onClick={() => dispatch(addModule({ ...module, course: courseId }))}
-          className="edit"
-        >
-          Add
-        </button>
-        <button
-          className="update"
-          onClick={() => dispatch(updateModule(module))}
-        >
-          Update
-        </button>
-      </div>
-      <textarea
-        placeholder="New Description"
-        value={module.description}
-        onChange={(e) =>
-          dispatch(setModule({ ...module, description: e.target.value }))
-        }
-      />
-      <ul className="list-group wd-module">
-        {moduleList.map((module, index) => (
-          <li key={module._id} className="list-group-item">
+    <ul className="list-group">
+      {(modules) 
+        .filter((module) => module.course === courseId.courseId) // Fix: Access the courseId property from useParams()
+        .map((module, index) => (
+          <li key={index} className="list-group-item">
             <button
-              className="edit"
-              onClick={() => dispatch(setModule(module))}
-            >
-              Edit
-            </button>
-            <button
-              className="delete-button"
-              onClick={() => dispatch(deleteModule(module._id))}
-            >
-              Delete
-            </button>
-            <div className="module-item">
-              <div className="module-name">{module.name}</div>
-              <div className="module-description">{module.description}</div>
-            </div>
+              onClick={() => handleDeleteModule(module._id)} >
+              Delete </button>
+              <button onClick={handleAddModule}>Add</button>
+              <button onClick={handleUpdateModule}>Update</button>
+            <h3>{module.name}</h3>
           </li>
         ))}
-      </ul>
-    </>
+    </ul>
   );
+
 }
 
 export default ModuleList;
+

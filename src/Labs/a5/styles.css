@@ -1,0 +1,80 @@
+/* Apply a global font and remove default margin */
+body {
+    font-family: 'Arial', sans-serif; /* Consistent font usage */
+    margin: 0;
+    background: white; /* Set the background to white */
+  }
+  
+  /* Style the calculator container */
+  .calculator-container {
+    text-align: center; /* Center align the container content */
+    padding: 20px;
+  }
+  .yellow-button {
+    background-color: #ffd21f;
+    color: black; /* This ensures the text is readable on the yellow background */
+    /* Add other styling as necessary, e.g., border, padding, etc. */
+    border: none; /* Example style */
+    padding: 10px; /* Example style */
+    border-radius: 5px; /* Example style */
+  }
+  
+  
+  /* Style the input fields */
+  input[type="text"] {
+    border: 1px solid #ccc; /* Add a border to the input */
+    border-radius: 5px; /* Round the corners of the input field */
+    padding: 10px;
+    margin: 10px 0; /* Add some space around the inputs */
+    width: 200px; /* Set a fixed width for the inputs */
+  }
+  
+  /* Style the buttons */
+  button {
+    background: #dc3545;
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Round the corners of the buttons */
+    padding: 10px 15px; /* Add some padding inside the buttons */
+    color: white; /* Set the text color to white */
+    font-size: 1em; /* Increase the font size */
+    cursor: pointer; /* Change the cursor to a pointer */
+    margin: 5px 10px; /* Add margin to all sides with extra on left and right */
+  }
+  
+  /* Additional styles for the 'Add' and 'Subtract' buttons */
+  .add-button, .subtract-button {
+    color: white; /* Ensure the text color is white for both */
+    text-decoration: none; /* Remove underline from text */
+  }
+  
+  /* Specific styles for the 'Add' button */
+  .add-button {
+    background-color: #007bff; /* Set the background color to blue */
+    /* You don't need margin-right here if you're applying margin to all buttons above */
+  }
+  
+  /* Specific styles for the 'Subtract' button */
+  .subtract-button {
+    background-color: #dc3545; /* Set the background color to red */
+    /* You don't need margin-right here if you're applying margin to all buttons above */
+  }
+  
+  /* Style the section title */
+  .section-title {
+    margin: 20px 0; /* Add some space above and below the title */
+    font-size: 1.2em; /* Increase the font size */
+  }
+  
+  /* General anchor tag styles */
+  a {
+    /* Removed padding and border-radius as they're now handled by button styles */
+    text-decoration: none; /* Remove underline from all anchor tags */
+    color: inherit; /* Inherit color from parent or specifically set it */
+  }
+  
+  /* If you want to remove the underline from links specifically when they look like buttons */
+  .btn {
+    text-decoration: none; 
+    margin-right: 10px;/* Remove underline from button-like links */
+  }
+  
