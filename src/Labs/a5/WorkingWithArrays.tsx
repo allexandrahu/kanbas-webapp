@@ -72,7 +72,9 @@ function WorkingWithArrays() {
         Create Todo
       </a>
       <h2>Working with Arrays</h2>
-      <button onClick={createTodo}>Create Todo</button>
+      <button className="add-button btn btn-primary" onClick={createTodo}>Create Todo</button>{" "}
+      <button className="add-button btn btn-primary"onClick={updateTitle}>Update Title</button>
+      <br />
       <input
         type="number"
         value={todo.id}
@@ -83,6 +85,7 @@ function WorkingWithArrays() {
           })
         }
       />{" "}
+      <br />
       <input
         type="text"
         value={todo.title}
@@ -92,11 +95,13 @@ function WorkingWithArrays() {
             title: e.target.value,
           })
         }
-      />
+      />{" "}
+      <br />
       <textarea
         value={todo.description}
         onChange={(e) => setTodo({ ...todo, description: e.target.value })}
-      />
+      />{" "}
+      <br />
       <input
         value={todo.due}
         type="date"
@@ -106,7 +111,8 @@ function WorkingWithArrays() {
             due: e.target.value,
           })
         }
-      />
+      />{" "}
+      <br />
       <label>
         <input
           value={todo.completed.toString()}
@@ -119,9 +125,10 @@ function WorkingWithArrays() {
           }
         />
         Completed
-      </label>
-      <button onClick={postTodo}> Post Todo </button>
-      <button onClick={updateTitle}>Update Title</button>
+      </label>{" "}
+      <br />
+      <button className="add-button btn btn-primary" onClick={postTodo}> Post Todo </button>
+      <button className="add-button btn btn-primary" onClick={updateTitle}>Update Title</button>
       <h3>Updating an Item in an Array</h3>
       <a
         className="add-button btn btn-primary"
@@ -161,10 +168,10 @@ function WorkingWithArrays() {
         Get Completed Todos
       </a>
       <h4>Create Todo</h4>
+      <button onClick={updateTodo}>Update Todo</button>
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            <button onClick={updateTodo}>Update Todo</button>
             <button
               onClick={() => deleteTodo(todo)}
               className="btn btn-danger float-end ms-2"
@@ -175,14 +182,14 @@ function WorkingWithArrays() {
             {todo.title}
             <p>{todo.description}</p>
             <p>{todo.due}</p>
-            <button onClick={() => removeTodo(todo)}>Remove</button>
-
             <button
               className="yellow-button"
               onClick={() => fetchTodoById(todo.id)}
             >
               Edit
             </button>
+            <button onClick={() => removeTodo(todo)}>Remove</button>
+
             {todo.title}
           </li>
         ))}

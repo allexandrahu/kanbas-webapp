@@ -40,7 +40,6 @@ body {
     cursor: pointer; /* Change the cursor to a pointer */
     margin: 5px 10px; /* Add margin to all sides with extra on left and right */
   }
-  
   /* Additional styles for the 'Add' and 'Subtract' buttons */
   .add-button, .subtract-button {
     color: white; /* Ensure the text color is white for both */
@@ -77,4 +76,5 @@ body {
     text-decoration: none; 
     margin-right: 10px;/* Remove underline from button-like links */
   }
+  
   

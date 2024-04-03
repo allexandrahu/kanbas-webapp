@@ -30,16 +30,16 @@ function EncodingParametersInURLs() {
       <h5>Fetching Welcome</h5>
       <h6>{welcome}</h6>
       <h4>Calculator</h4>
-      <input
+      <input 
         type="number"
         value={a}
         onChange={(e) => setA(parseInt(e.target.value))}
-      />
+      /> <br/>
       <input
         type="number"
         onChange={(e) => setB(parseInt(e.target.value))}
         value={b}
-      />
+      /> <br/>
             <input value={result} type="number" readOnly />
       <h3>Fetch Result</h3>
       <button onClick={() => fetchSum(a, b)} >

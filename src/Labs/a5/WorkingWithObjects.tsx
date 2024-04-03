@@ -43,7 +43,7 @@ function WorkingWithObjects() {
       </button>
       <button onClick={fetchAssignment} >
         Fetch Assignment
-      </button>
+      </button> <br/>
       <h4>Modifying Properties</h4>
       <a
         className="add-button btn btn-primary"
