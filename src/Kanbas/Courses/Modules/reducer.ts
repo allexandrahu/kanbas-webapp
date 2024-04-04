@@ -15,7 +15,6 @@ const modulesSlice = createSlice({
     addModule: (state, action) => {
       state.modules = [action.payload, ...state.modules];
     },
-
     deleteModule: (state, action) => {
       state.modules = state.modules.filter(
         (module: any) => module._id !== action.payload

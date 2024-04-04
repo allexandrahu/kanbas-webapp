@@ -42,10 +42,10 @@ function EncodingParametersInURLs() {
         onChange={(e) => setB(parseInt(e.target.value))}
       />
       <h3>Path Parameters</h3>
-      <a href={`http://localhost:4000/a5/add/${a}/${b}`}>
+      <a className="btn btn-primary" href={`http://localhost:4000/a5/add/${a}/${b}`}>
         Add {a} + {b}
       </a>
-      <a href={`http://localhost:4000/a5/subtract/${a}/${b}`}>
+      <a className="btn btn-primary" href={`http://localhost:4000/a5/subtract/${a}/${b}`}>
         Substract {a} - {b}
       </a>
       <h3>Query Parameters</h3>
