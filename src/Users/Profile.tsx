@@ -22,10 +22,16 @@ export default function Profile() {
   useEffect(() => {
     fetchProfile();
   }, []);
+  const signout = async () => {
+    await client.signout();
+    navigate("/Kanbas/Account/Signin");
+  };
+
   return (
     <div>
       <h1>Profile</h1>
       <button onClick={save}>Save</button>
+      <button onClick={signout}>Signout</button>
       <Link to="/Kanbas/Account/Admin/Users" className="btn btn-warning w-100">
         Users
       </Link>
