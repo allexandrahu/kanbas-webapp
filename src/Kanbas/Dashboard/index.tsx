@@ -1,46 +1,61 @@
 import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import "./index.css"
+import axios from "axios";
 import './index.css'; 
+const API_BASE = process.env.REACT_APP_API_BASE;
 
-function Dashboard({
-  courses,
-  course,
-  setCourse,
-  addNewCourse,
-  deleteCourse,
-  updateCourse,
-}: {
-  courses: {
-    _id: string;
-    name: string;
-    number: string;
-    startDate: string;
-    endDate: string;
-    image: string;
-  }[];
-  course: {
-    _id: string;
-    name: string;
-    number: string;
-    startDate: string;
-    endDate: string;
-    image: string;
+
+function Dashboard(){
+  const [courses, setCourses] = useState<any[]>([])
+  const COURSES_API = `${API_BASE}/api/courses`;
+  const [course, setCourse] = useState({
+    _id: "0", name: "New Course", number: "New Number",
+    startDate: "2023-09-10", endDate: "2023-12-15",
+    image: "react.png"
+  });
+
+  const deleteCourse = async (courseId: string) => {
+    const response = await axios.delete(
+      `${COURSES_API}/${courseId}`
+    );
+    setCourses(courses.filter(
+      (c) => c._id !== courseId));
   };
-  setCourse: (course: {
-    _id: string;
-    name: string;
-    number: string;
-    startDate: string;
-    endDate: string;
-    image: string;
-  }) => void;
-  addNewCourse: () => void;
-  deleteCourse: (id: string) => void;
-  updateCourse: () => void;
-}) {
+
+   const addNewCourse = async () => {
+    const response = await axios.post(COURSES_API, course);
+    setCourses([ ...courses, response.data ]);
+  };
+
+  const findAllCourses = async () => {
+    const response = await axios.get(COURSES_API);
+    setCourses(response.data);
+  };
+  useEffect(() => {
+    findAllCourses();
+  }, []);
+
+  const updateCourse = async () => {
+    const response = await axios.put(
+      `${COURSES_API}/${course._id}`,
+      course
+    );
+    setCourses(
+      courses.map((c) => {
+        if (c._id === course._id) {
+          return course;
+        }
+        return c;
+      })
+    );
+    }
+  const lenOfCourses = courses.length
+
   return (
     <div className="p-4">
       <h1>Dashboard</h1> <hr />
-      <h5>Course</h5>
+      <h5>Add or Update Course</h5>
       <input
         value={course.name}
         className="form-control"
