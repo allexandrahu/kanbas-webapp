@@ -38,9 +38,7 @@ export default function UserTable() {
     const users = await client.findAllUsers();
     setUsers(users);
   };
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+
   const selectUser = async (user: User) => {
     try {
       const u = await client.findUserById(user._id);
@@ -63,13 +61,16 @@ export default function UserTable() {
     setRole(role);
     setUsers(users);
   };
-
+  useEffect(() => {
+    fetchUsers();
+  }, []);
   return (
     <div>
       <select
         onChange={(e) => fetchUsersByRole(e.target.value)}
         value={role || "USER"}
-        className="form-control w-25 float-end">
+        className="form-control w-25 float-end"
+      >
         <option value="USER">User</option>
         <option value="ADMIN">Admin</option>
         <option value="FACULTY">Faculty</option>
@@ -79,13 +80,11 @@ export default function UserTable() {
       <table className="table">
         <thead>
           <tr>
-            <td>
-              <th>Username</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Role</th>
-              <th>&nbsp;</th>
-            </td>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Role</th>
+            <th>&nbsp;</th>
             <td>
               <input
                 value={user.password}

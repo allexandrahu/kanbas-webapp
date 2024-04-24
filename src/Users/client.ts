@@ -1,11 +1,20 @@
 import axios from "axios";
-export const BASE_API = process.env.REACT_APP_BASE_API_URL || "http://localhost:3000";
+export const BASE_API =
+  process.env.REACT_APP_BASE_API_URL || "http://localhost:4000/";
 export const USERS_API = `${BASE_API}/api/users`;
 axios.defaults.withCredentials = true;
-export interface User { _id: string; username: string; password: string; role: string;
-firstName: string, lastName: string };
+
+export interface User {
+  _id: string;
+  username: string;
+  password: string;
+  role: string;
+  firstName: string;
+  lastName: string;
+}
 export const signin = async (credentials: User) => {
-  const response = await axios.post( `${USERS_API}/signin`, credentials );
+  const response = await axios.post(`${USERS_API}/signin`, credentials);
+  console.log("Logged in successfully to", credentials.username);
   return response.data;
 };
 export const profile = async () => {
@@ -26,8 +35,7 @@ export const createUser = async (user: any) => {
   return response.data;
 };
 export const deleteUser = async (user: any) => {
-  const response = await axios.delete(
-    `${USERS_API}/${user._id}`);
+  const response = await axios.delete(`${USERS_API}/${user._id}`);
   return response.data;
 };
 export const findUserById = async (id: string) => {
@@ -35,8 +43,7 @@ export const findUserById = async (id: string) => {
   return response.data;
 };
 export const findUsersByRole = async (role: string) => {
-  const response = await
-    axios.get(`${USERS_API}?role=${role}`);
+  const response = await axios.get(`${USERS_API}?role=${role}`);
   return response.data;
 };
 export const signup = async (user: any) => {
@@ -47,7 +54,3 @@ export const signout = async () => {
   const response = await axios.post(`${USERS_API}/signout`);
   return response.data;
 };
-
-
-
-

@@ -19,13 +19,14 @@ export default function Profile() {
   const save = async () => {
     await client.updateUser(profile);
   };
-  useEffect(() => {
-    fetchProfile();
-  }, []);
   const signout = async () => {
     await client.signout();
     navigate("/Kanbas/Account/Signin");
   };
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+ 
 
   return (
     <div>

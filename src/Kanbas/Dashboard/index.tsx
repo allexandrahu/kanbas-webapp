@@ -2,13 +2,10 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "./index.css"
 import axios from "axios";
-import './index.css'; 
-const API_BASE = process.env.REACT_APP_API_BASE;
 
 
 function Dashboard(){
   const [courses, setCourses] = useState<any[]>([])
-  const COURSES_API = `${API_BASE}/api/courses`;
   const [course, setCourse] = useState({
     _id: "0", name: "New Course", number: "New Number",
     startDate: "2023-09-10", endDate: "2023-12-15",
@@ -28,6 +25,7 @@ function Dashboard(){
     setCourses([ ...courses, response.data ]);
   };
 
+  const COURSES_API = "https://kanbas-node-server-app-w5gi.onrender.com/api/courses";
   const findAllCourses = async () => {
     const response = await axios.get(COURSES_API);
     setCourses(response.data);
