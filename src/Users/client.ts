@@ -5,6 +5,8 @@ export const USERS_API = `${BASE_API}/api/users`;
 axios.defaults.withCredentials = true;
 
 export interface User {
+  dob: string;
+  email: string;
   _id: string;
   username: string;
   password: string;

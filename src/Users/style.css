@@ -1,0 +1,92 @@
+.signin-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%; /* Adjust width as needed */
+    margin-left: 100px;
+  }
+  
+  .signin-title {
+    text-align: left;
+    margin-bottom: 2rem; /* Spacing below title */
+  }
+  
+  .input-group {
+    margin-bottom: 1rem; /* Spacing between each input group */
+  }
+  
+  .input-label {
+    display: block; /* Labels take up the full width */
+    margin-bottom: 0.5rem; /* Spacing below label */
+  }
+  
+  .input-field {
+    width: 100%; /* Full width of parent */
+    padding: 10px;
+    margin-bottom: 1rem; /* Spacing below the input field */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .signin-button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 10%;
+  }
+  
+  .signin-button:hover {
+    background-color: #0056b3; /* Darken button color on hover */
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    max-width: 100%; /* Adjust the width as needed */
+    margin-left: 100px; /* Center the container on the page */
+  }
+  
+  .profile-title {
+    margin-bottom: 2rem;
+    font-size: 2rem; /* Adjust the size as needed */
+  }
+  
+  .profile-buttons {
+    display: flex;
+    gap: 10px; /* Adjust the space between buttons */
+    margin-bottom: 2rem;
+  }
+  
+  .profile-button, .profile-link {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .profile-button:hover, .profile-link:hover {
+    background-color: #0056b3;
+  }
+  
+  .profile-form {
+    width: 100%;
+  }
+  
+  .profile-input, .profile-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  

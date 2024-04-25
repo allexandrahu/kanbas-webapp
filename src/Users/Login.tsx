@@ -4,8 +4,8 @@ import { User } from "./client";
 import * as client from "./client";
 export default function Signin() {
   const [credentials, setCredentials] = useState<User>({ _id: "",
-    username: "", password: "", firstName: "", lastName: "", role: "USER"
-  });
+      username: "", password: "", firstName: "", lastName: "", role: "USER", dob: "", email: ""
+    });
   const navigate = useNavigate();
   const signin = async () => {
     await client.signin(credentials);

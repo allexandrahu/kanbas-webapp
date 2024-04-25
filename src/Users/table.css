@@ -1,0 +1,159 @@
+/* General styling for the user table */
+.table {
+    width: fit-content;
+    margin-left: 100px;
+    margin-top: 20px; /* Spacing above the table */
+    border-collapse: collapse; /* Collapses the border lines */
+  }
+  
+  /* Header styles */
+  .table thead th {
+    text-align: left;
+    width: 200px; /* Adjust the width as needed */
+    padding: 10px;
+    margin-left: 100px;
+    background-color: #f5f5f5; /* Light gray background */
+    border-bottom: 1px solid #ddd; /* Bottom border for separation */
+  }
+  
+  /* Input field styles within the table */
+  .table input {
+    padding: 5px;
+    margin-right: 5px; /* Spacing between inputs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Select dropdown styling */
+  .table select {
+    padding: 5px;
+    height: 30px; /* Adjust the height as needed */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+  }
+  
+  /* Row and cell styles */
+  .table tbody tr {
+    border-bottom: 1px solid #ddd; /* Bottom border for separation */
+    height: 100px;
+  }
+  
+  .table tbody tr td {
+    padding: 10px;
+    vertical-align: top; /* Align content in the middle vertically */
+  }
+  /* Reset the button styles to remove default margins, paddings, and borders */
+.action-button {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* The square container for icons */
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Control the size of the icon container */
+    height: 40px;
+    margin: 5px auto; /* Vertically stack the buttons with some space between them */
+  }
+  
+  /* Specific colors for each action */
+  .check-icon-container {
+    background-color: #4CAF50; /* Green background */
+  }
+  
+  .add-icon-container {
+    background-color: #28A745; /* Slightly different green */
+  }
+  
+  .edit-icon-container {
+    background-color: #FFC107; /* Yellow background */
+  }
+  
+  .delete-icon-container {
+    background-color: #DC3545; /* Red background */
+  }
+  
+  /* Icons themselves */
+  .icon {
+    font-size: 1.5em; /* Larger size of the icons */
+    color: white;
+  }
+  
+  /* Hover effects for icon containers */
+  .icon-container:hover {
+    opacity: 0.8;
+  }
+  
+  /* Icon styles */
+  .fs-1 {
+    font-size: 1.25rem; /* Larger icons */
+  }
+  
+  .h1 {
+    margin-left: 100px;
+  }
+
+  .text-success {
+    color: #28a745; /* Bootstrap success color */
+  }
+  
+  /* Styles for the select dropdown above the table */
+  .form-control {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px; /* Spacing below the select dropdown */
+  }
+  
+  /* Floating the select to the right */
+  .float-end {
+    float: right;
+  }
+  
+ /* Styles for the action column buttons */
+.action-button {
+    display: block; /* Stack buttons vertically */
+    width: 40px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+    line-height: 40px; /* Center the icon vertically */
+    text-align: center; /* Center the icon horizontally */
+    margin: 8px auto; /* Center the button in the td and add some margin */
+    color: white; /* Icon color */
+    border-radius: 4px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  /* Specific colors for each action */
+  .add-button {
+    background-color: #108114; /* Green background for add */
+  }
+  
+  .edit-button {
+    background-color: #FFC107; /* Yellow background for edit */
+  }
+  
+  .delete-button {
+    background-color: #F44336; /* Red background for delete */
+  }
+  
+  /* Increase the size of the icons within the buttons */
+  .action-button .icon {
+    font-size: 20px; /* Larger icons */
+  }
+  
+  /* Adjust padding if you use text instead of icons */
+  .action-button .icon-text {
+    display: inline-block;
+    vertical-align: l;
+  }
+  
+  /* Hover effect for buttons */
+  .action-button:hover {
+    opacity: 0.8; /* Slight transparency on hover */
+  }
+  

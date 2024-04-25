@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./table.css";
 import {
   BsFillCheckCircleFill,
   BsPencil,
@@ -24,6 +25,8 @@ export default function UserTable() {
     firstName: "",
     lastName: "",
     role: "USER",
+    dob: "",
+    email: "",
   });
   const createUser = async () => {
     try {
@@ -47,7 +50,7 @@ export default function UserTable() {
       console.log(err);
     }
   };
-  const updateUser = async () => {
+  const updateUser = async (user: client.User) => {
     try {
       const status = await client.updateUser(user);
       setUsers(users.map((u) => (u._id === user._id ? user : u)));
@@ -55,6 +58,15 @@ export default function UserTable() {
       console.log(err);
     }
   };
+  const formatDate = (isoString: string | number | Date) => {
+    const date = new Date(isoString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+  };
+
   const [role, setRole] = useState("USER");
   const fetchUsersByRole = async (role: string) => {
     const users = await client.findUsersByRole(role);
@@ -66,33 +78,44 @@ export default function UserTable() {
   }, []);
   return (
     <div>
-      <select
+      {/* <select
         onChange={(e) => fetchUsersByRole(e.target.value)}
         value={role || "USER"}
-        className="form-control w-25 float-end"
+        className="form-control float-end margin-left-100px"
       >
         <option value="USER">User</option>
         <option value="ADMIN">Admin</option>
         <option value="FACULTY">Faculty</option>
         <option value="STUDENT">Student</option>
-      </select>
-      <h1>User Table</h1>
+      </select> */}
+      <h1 className="table">User Table</h1>
       <table className="table">
         <thead>
           <tr>
             <th>Username</th>
+            <th>Password</th> {/* Added missing column */}
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Email</th> {/* Added missing column */}
+            <th>Date of Birth</th> {/* Added missing column */}
             <th>Role</th>
-            <th>&nbsp;</th>
+            <th>Actions</th> {/* Renamed for clarity */}
+          </tr>
+        </thead>
+        <tbody>
+          {/* New user input row */}
+          <tr>
             <td>
-              <input
-                value={user.password}
-                onChange={(e) => setUser({ ...user, password: e.target.value })}
-              />
               <input
                 value={user.username}
                 onChange={(e) => setUser({ ...user, username: e.target.value })}
+              />
+            </td>
+            <td>
+              <input
+                value={user.password}
+                type="password"
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
               />
             </td>
             <td>
@@ -110,6 +133,19 @@ export default function UserTable() {
               />
             </td>
             <td>
+              <input
+                value={user.email}
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
+              />
+            </td>
+            <td>
+              <input
+                value={user.dob}
+                type="date"
+                onChange={(e) => setUser({ ...user, dob: e.target.value })}
+              />
+            </td>
+            <td>
               <select
                 value={user.role}
                 onChange={(e) => setUser({ ...user, role: e.target.value })}
@@ -121,26 +157,34 @@ export default function UserTable() {
               </select>
             </td>
             <td>
-              <BsFillCheckCircleFill
-                onClick={updateUser}
-                className="me-2 text-success fs-1 text"
-              />
-              <BsPlusCircleFill onClick={createUser} />
+              <button onClick={() => updateUser(user)} className="action-button add-button">
+                <BsFillCheckCircleFill />
+              </button>
+              <button className="action-button add-button" onClick={createUser}>
+                <BsPlusCircleFill className="icon" />{" "}
+              </button>
             </td>
           </tr>
-        </thead>
-        <tbody>
-          {users.map((user: any) => (
+          {users.map((user: User) => (
             <tr key={user._id}>
               <td>{user.username}</td>
+              <td>••••••••</td> {/* Mask password */}
               <td>{user.firstName}</td>
               <td>{user.lastName}</td>
+              <td>{user.email}</td> <td>{formatDate(user.dob)}</td>{" "}
+              <td>{user.role}</td>
               <td>
-                <button onClick={() => deleteUser(user)}>
-                  <BsTrash3Fill />
+                <button
+                  className="action-button edit-button"
+                  onClick={() => selectUser(user)}
+                >
+                  <BsPencil className="icon" />
                 </button>
-                <button className="btn btn-warning me-2">
-                  <BsPencil onClick={() => selectUser(user)} />
+                <button
+                  className="action-button delete-button"
+                  onClick={() => deleteUser(user)}
+                >
+                  <BsTrash3Fill className="icon" />
                 </button>
               </td>
             </tr>
